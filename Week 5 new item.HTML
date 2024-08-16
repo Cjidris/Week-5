@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new items</title>
+    <style>
+        /* Optional styling for the list and input */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <script src="Week 5 new item.Js"></script>
+
+    <h1>My List</h1>
+    <ul id="myList">
+        <!-- List items will be added here -->
+    </ul>
+    
+    
+    <input type="text" id="itemInput" placeholder="Enter new item">
+    <button onclick="addItem()">New item</button>
+
+    <script>
+        function addItem() {
+            // Get the input value
+            var input = document.getElementById('itemInput');
+            var newItem = input.value.trim();
+
+            // Check if the input is not empty
+            if (newItem !== '') {
+
+                // Create a new list item
+                var li = document.createElement('li');
+                li.textContent = newItem;
+
+                // Append the new list item to the list
+                var list = document.getElementById('myList');
+                list.appendChild(li);
+
+                // Clear the input field
+                input.value = '';
+            } else {
+                alert('Please enter a valid item.');
+            }
+        }
+    </script>
+
+</body>
+</html>
